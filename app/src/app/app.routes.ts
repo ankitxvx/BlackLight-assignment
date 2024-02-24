@@ -5,6 +5,7 @@ import { DataComponent } from './data/data.component';
 import { UserbyidComponent } from './userbyid/userbyid.component';
 
 export const routes: Routes = [
+    { path: '', component: CurrWeekComponent },
     { path: 'first-component', component: CurrWeekComponent },
   { path: 'second-component', component: LastWeekComponent },
   {path:'third-component', component : DataComponent},

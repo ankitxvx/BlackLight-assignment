@@ -14,7 +14,7 @@ app.get("/",(req,res)=>{
 })
 
 app.get("/cw",(req,res)=>{
-    con.query("SELECT UID, Name, Score, Country, TimeStamp FROM mock_data WHERE YEARWEEK(TimeStamp, 1) = YEARWEEK(CURRENT_DATE(), 1) ORDER BY Score DESC LIMIT 200;", (err, rows) => {
+    con.query("SELECT * FROM mock_data WHERE YEARWEEK(Date_and_time, 1) = YEARWEEK(CURRENT_DATE(), 1) ORDER BY Score DESC LIMIT 200;", (err, rows) => {
         if (err) throw err;
         console.log('Data received from Db:');
         
@@ -25,7 +25,7 @@ app.get("/lw/:country", (req, res) => {
     con.query("SELECT * FROM  mock_data WHERE Country = ? AND Date_and_time >= DATE_SUB(CURDATE(), INTERVAL 7 DAY) ORDER BY Score DESC LIMIT 200;", [req.params.country], (err, rows) => {
         if (err) {
             console.error('Error executing query:', err);
-            res.status(500).send('Internal Server Error'); // Send an error response to the client
+            res.status(500).send('Internal Server Error');  
             return;
         }
         

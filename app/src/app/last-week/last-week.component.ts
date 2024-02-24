@@ -23,10 +23,33 @@ export class LastWeekComponent implements OnInit {
     this.fetchData();
   }
   fetchData() {
-    this.http.get(`http://localhost:8000/lw/${this.country}`).subscribe((users: any) => {
+    if(this.country!=''){
+      let x = document.getElementById('container');
+      if (x) {
+          x.style.visibility = 'visible';
+      } 
       
+      
+      this.http.get(`http://localhost:8000/lw/${this.country}`).subscribe((users: any) => {
       this.users = users;
       console.log(users);
-    });
+    })
+    }else{
+      // let d = document.getElementById('container');
+      // if (d) {
+      //     d.style.visibility = 'hidden';
+      // }
+      // Get the snackbar DIV
+
+      var x = document.getElementById("snackbar");
+
+      // Add the "show" class to DIV
+      if(x!=null){
+       x.className = "show";
+       setTimeout(function(){ if(x!=null)x.className = x.className.replace("show", ""); }, 3000);
+      }
+    }
+    
+    
   }
 }
