@@ -1,0 +1,45 @@
+<div class="d-flex flex-column justify-content-center align-items-center ">
+    <div class="col-md-6 mx-auto">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter UserID"
+          [(ngModel)]="id"
+        />
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button" (click)="fetchData()">
+            Search
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 mx-auto">
+      <div class="card">
+        <div class="card-body">
+          <table class="table col-md-5">
+            <thead>
+              <tr>
+                <th scope="col">UID</th>
+                <th scope="col">Rank</th>
+              </tr>
+            </thead>
+            <tbody>
+                @for(data of users; track data.UID){
+                    <tr>
+                      @if(data.ranking>0){
+                      <td>{{ data.UID }}</td>
+                      <td>{{ data.ranking }}</td>
+                      }
+                    </tr>
+                    }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+  
