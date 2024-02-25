@@ -18,7 +18,7 @@ export class DataComponent implements OnInit {
       this.fetchData();
   }
   fetchData(){
-    this.http.get('http://localhost:8000/')
+    this.http.get('https://black-light-assignment.vercel.app/')
     .subscribe((users: any)=>{
         
        this.users = users;
