@@ -19,9 +19,33 @@ export class UserbyidComponent implements OnInit {
     this.fetchData();
   }
   fetchData() {
-    this.http.get(`http://localhost:8000/${this.id}`).subscribe((users: any) => {
-      console.log(users)
+    if(this.id!=''){
+      let x = document.getElementById('container');
+      if (x) {
+          x.style.visibility = 'visible';
+      } 
+      this.http.get(`http://localhost:8000/${this.id}`).subscribe((users: any) => {
+       
       this.users = users;
+
     });
+      
+    }
+    
+    else{
+      // let d = document.getElementById('container');
+      // if (d) {
+      //     d.style.visibility = 'hidden';
+      // }
+      // Get the snackbar DIV
+
+      var x = document.getElementById("snackbar");
+
+      // Add the "show" class to DIV
+      if(x!=null){
+       x.className = "show";
+       setTimeout(function(){ if(x!=null)x.className = x.className.replace("show", ""); }, 3000);
+      }
+    }
 }
 }

@@ -1,11 +1,11 @@
 const mysql = require('mysql2');
 
 const connection = mysql.createConnection({
-    host: '127.0.0.1',
+    host: process.env.HOST,
     port: '3306',
-    user: 'root',
-    password: 'Ankit@1997',
-    database: 'test',
+    user: 'admin',
+    password:process.env.PASSWORD,
+    database: 'blacklight',
     authPlugin: 'mysql_native_password' // Set the authentication method
 });
 
@@ -18,3 +18,13 @@ connection.connect((err) => {
 });
 
 module.exports = connection;
+
+ 
+
+ 
+   
+
+     
+
+
+ 

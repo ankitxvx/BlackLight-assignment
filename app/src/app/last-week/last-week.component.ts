@@ -32,7 +32,7 @@ export class LastWeekComponent implements OnInit {
       
       this.http.get(`http://localhost:8000/lw/${this.country}`).subscribe((users: any) => {
       this.users = users;
-      console.log(users);
+       
     })
     }else{
       // let d = document.getElementById('container');
