@@ -6,7 +6,7 @@ const connection = mysql.createConnection({
     user: 'admin',
     password:process.env.PASSWORD,
     database: 'blacklight',
-    authPlugin: 'mysql_native_password' // Set the authentication method
+     
 });
 
 connection.connect((err) => {

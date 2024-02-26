@@ -30,7 +30,7 @@ export class LastWeekComponent implements OnInit {
       } 
       
       
-      this.http.get(`https://black-light-assignment-1non.vercel.app/lw/${this.country}`).subscribe((users: any) => {
+      this.http.get(`https://black-light-assignment-nxto.vercel.app/lw/${this.country}`).subscribe((users: any) => {
       this.users = users;
        
     })

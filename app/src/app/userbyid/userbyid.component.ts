@@ -24,7 +24,7 @@ export class UserbyidComponent implements OnInit {
       if (x) {
           x.style.visibility = 'visible';
       } 
-      this.http.get(`https://black-light-assignment-1non.vercel.app/${this.id}`).subscribe((users: any) => {
+      this.http.get(`https://black-light-assignment-nxto.vercel.app/${this.id}`).subscribe((users: any) => {
        
       this.users = users;
       console.log(users)
