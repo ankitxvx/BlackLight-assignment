@@ -1,0 +1,8 @@
+{
+  "routes": [
+    "/",
+    "/currentweek200",
+    "/lastweek200",
+    "/ranking"
+  ]
+}
