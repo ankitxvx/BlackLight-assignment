@@ -26,22 +26,27 @@
           <table  class="table col-md-5">
             <thead>
               <tr>
-                <th scope="col">UID</th>
+                <th scope="col">User ID</th>
                 <th scope="col">Rank</th>
+                <th scope="col">Name</th>
+                <th scope="col">Score</th>
+                <th scope="col">Country</th>
+                
               </tr>
             </thead>
             <tbody>
-              @if(users.length===0){
-                <h3>Country not played</h3>
-              }
-              @else{
+              @if(users.length!=0){
                 @for(data of users; track data.UID){
                   <tr>
                     <td>{{ data.UID }}</td>
                     <td>{{ data.ranking}}</td>
+                    <td>{{ data.Name}}</td>
+                    <td>{{ data.Score}}</td>
+                    <td>{{ data.Country}}</td>
                   </tr>
                   }
               }
+               
              
             </tbody>
           </table>

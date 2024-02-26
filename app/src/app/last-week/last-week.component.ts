@@ -35,15 +35,11 @@ export class LastWeekComponent implements OnInit {
        
     })
     }else{
-      // let d = document.getElementById('container');
-      // if (d) {
-      //     d.style.visibility = 'hidden';
-      // }
-      // Get the snackbar DIV
+      
 
       var x = document.getElementById("snackbar");
 
-      // Add the "show" class to DIV
+      
       if(x!=null){
        x.className = "show";
        setTimeout(function(){ if(x!=null)x.className = x.className.replace("show", ""); }, 3000);
