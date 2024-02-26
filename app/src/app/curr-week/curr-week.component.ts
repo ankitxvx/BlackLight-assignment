@@ -16,7 +16,7 @@ export class CurrWeekComponent implements OnInit {
     this.fetchData();
   }
   fetchData() {
-    this.http.get('http://localhost:8000/cw').subscribe((users: any) => {
+    this.http.get('https://black-light-assignment-1non.vercel.app/cw').subscribe((users: any) => {
       
       this.users = users;
     });

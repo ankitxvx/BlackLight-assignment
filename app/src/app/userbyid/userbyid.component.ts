@@ -24,7 +24,7 @@ export class UserbyidComponent implements OnInit {
       if (x) {
           x.style.visibility = 'visible';
       } 
-      this.http.get(`http://localhost:8000/${this.id}`).subscribe((users: any) => {
+      this.http.get(`https://black-light-assignment-1non.vercel.app/${this.id}`).subscribe((users: any) => {
        
       this.users = users;
       console.log(users)
@@ -34,15 +34,11 @@ export class UserbyidComponent implements OnInit {
     }
     
     else{
-      // let d = document.getElementById('container');
-      // if (d) {
-      //     d.style.visibility = 'hidden';
-      // }
-      // Get the snackbar DIV
+    
 
       var x = document.getElementById("snackbar");
 
-      // Add the "show" class to DIV
+   
       if(x!=null){
        x.className = "show";
        setTimeout(function(){ if(x!=null)x.className = x.className.replace("show", ""); }, 3000);
